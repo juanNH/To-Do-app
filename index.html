@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">TODO</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            </ul>
+        </div>
+        </nav>
+        <div class="container">
+            <form id="add-todo-form">
+              <input type="text" name="title" placeholder="Add task">
+              <a class="waves-effect waves-light btn">button</a>
+            </form>
+            <ul id="todo-list" class="collection">
+
+                     <!--   <li class="collection-item"><div><span>buying food</span><i class="material-icons secondary-content">delete</i><a href="#modal1" class="modal-trigger secondary-content"><i class="material-icons secondary-content">edit</i></a></div></li> -->
+                       
+            </ul>
+            
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
+        </div>
+    <script> 
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAvLXJlyLLCNokvPuOBl_C_yZgcERuv7cg",
+        authDomain: "todolist-683fc.firebaseapp.com",
+        projectId: "todolist-683fc",
+        storageBucket: "todolist-683fc.appspot.com",
+        messagingSenderId: "714910061471",
+        appId: "1:714910061471:web:c8a9ffb601eabc084163aa"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+</script>
+<script src="app.js"></script>
+</body>
+</html>
