@@ -1,5 +1,5 @@
 const todoList = document.querySelector("#todo-list")
-
+const form = document.querySelector("#add-todo-form")
 function renderList(doc){
     let li = document.createElement("li")
     li.className = "collection-item"
@@ -22,7 +22,10 @@ function renderList(doc){
     div.appendChild(anchor)
     li.appendChild(div)
     deleteBtn.addEventListener("click",e=>{
-        console.log("delete")
+
+        let id = e.target.parentElement.parentElement.getAttribute('data-id')
+        db.collection('todos').doc(id).delete()
+        console.log(id)
     })
     editBtn.addEventListener("click",e=>{
         console.log("edit")
@@ -30,6 +33,15 @@ function renderList(doc){
 
     todoList.append(li)
 }
+
+form.addEventListener("submit",e=>{
+    e.preventDefault()
+    db.collection('todos').add({
+        title: form.title.value
+    })
+    form.title.value=''
+})
+
 
 db.collection("todos").orderBy("title").onSnapshot(snapshot=>{
     let changes = snapshot.docChanges()
@@ -39,7 +51,8 @@ db.collection("todos").orderBy("title").onSnapshot(snapshot=>{
             renderList(change.doc)
             console.log(change.doc.data())
         }else if (change.type =="removed"){
-            console.log("removed")
+            let li = todoList.querySelector(`[data-id=${change.doc.id}]`)
+            todoList.removeChild(li)
         }else if(change.type =="modifed"){
             console.log("modified")
         }
