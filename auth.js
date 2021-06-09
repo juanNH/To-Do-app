@@ -1,7 +1,9 @@
 
 
 auth.onAuthStateChanged(user=>{
-    console.log('user', user)
+
+    getTodos()
+    setupUI(user)
 })
 
 const logout = document.querySelector('#logout')

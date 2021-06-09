@@ -1,8 +1,22 @@
 const todoList = document.querySelector("#todo-list")
 const form = document.querySelector("#add-todo-form")
 const updateBtn = document.querySelector('#update')
+const logoutItems = document.querySelectorAll('.logged-out')
+const loginItems = document.querySelectorAll('.logged-in')
 let newTitle = ''
 let updateId = null
+let currentUser = null
+
+function setupUI(user){
+    if(user){
+        loginItems.forEach(item=>item.style.display='block')
+        logoutItems.forEach(item=>item.style.display = 'none')
+    }else{
+        loginItems.forEach(item=>item.style.display='none')
+        logoutItems.forEach(item=>item.style.display = 'block')
+    }
+}
+
 
 function renderList(doc){
     let li = document.createElement("li")
@@ -52,21 +66,29 @@ form.addEventListener("submit",e=>{
     })
     form.title.value=''
 })
-
-
-db.collection("todos").orderBy("title").onSnapshot(snapshot=>{
-    let changes = snapshot.docChanges()
-    changes.forEach(change => {
-        if  (change.type == "added"){
-            renderList(change.doc)
-            console.log(change.doc.data())
-        }else if (change.type =="removed"){
-            let li = todoList.querySelector(`[data-id=${change.doc.id}]`)
-            todoList.removeChild(li)
-        }else if(change.type =="modified"){
-            let li = todoList.querySelector(`[data-id=${change.doc.id}]`)
-            li.getElementsByTagName('span')[0].textContent = newTitle
-            newTitle = ''
-        }
+function getTodos(){
+    todoList.innerHTML = ''
+    currentUser = auth.currentUser
+    if (currentUser === null){
+        todoList.innerHTML = '<h3 class="center-align">Pleas login to get todos </h3>'
+        return
+    }
+    db.collection("todos").orderBy("title").onSnapshot(snapshot=>{
+        let changes = snapshot.docChanges()
+        changes.forEach(change => {
+            if  (change.type == "added"){
+                renderList(change.doc)
+                console.log(change.doc.data())
+            }else if (change.type =="removed"){
+                let li = todoList.querySelector(`[data-id=${change.doc.id}]`)
+                todoList.removeChild(li)
+            }else if(change.type =="modified"){
+                let li = todoList.querySelector(`[data-id=${change.doc.id}]`)
+                li.getElementsByTagName('span')[0].textContent = newTitle
+                newTitle = ''
+            }
+        })
     })
-})
+}
+
+
