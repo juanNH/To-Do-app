@@ -63,6 +63,8 @@ form.addEventListener("submit",e=>{
     e.preventDefault()
     db.collection('alltodos').doc(currentUser.uid).collection('todos').add({
         title: form.title.value
+    }).catch(err=>{
+        console.log(err.message)
     })
     form.title.value=''
 })
