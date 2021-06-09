@@ -10,15 +10,20 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
 </head>
 <body>
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper container">
             <a href="#" class="brand-logo right">TODO</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <ul id="nav-mobile">
+                <li class="logged-in"><a href="#" id="logout">Logout</a></li>
+                <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-login" id="login">Login</a></li>
+                <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-signup" id="logout">Sign up</a></li>
+
             </ul>
         </div>
-        </nav>
+    </nav>
         <div class="container">
             <form id="add-todo-form">
               <input type="text" name="title" placeholder="Add task" required>
@@ -30,13 +35,53 @@
                        
             </ul>
             
-            <!-- Modal Structure -->
-            <div id="modal1" class="modal">
+            <!-- Edit modal-->
+            <div id="modal-edit" class="modal">
                 <div class="modal-content">
                     <input type="text" name="newtitle" placeholder='Update Task'>
                 </div>
                 <div class="modal-footer">
                     <a href="#!" id="update" class="modal-close waves-effect waves-green btn-flat">Update</a>
+                </div>
+            </div>
+            <!-- Login modal-->
+            <div id="modal-login" class="modal">
+                <div class="modal-content">
+                    <h4>Login</h4>
+                    <form action="" id="login-form">
+                        <div class="input-field">
+                            <input type="email" id="login-email" required>
+                            <label for="login-email">Email address</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="login-password" required>
+                            <label for="login-password">password </label>
+                        </div>
+                        <div class="modal-footer">
+                            <p class="error pink-text center-align"></p>
+                            <button class="waves-effect waves-green btn-flat">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Signup modal-->
+            <div id="modal-signup" class="modal">
+                <div class="modal-content">
+                    <h4>Signup</h4>
+                    <form action="" id="signup-form">
+                        <div class="input-field">
+                            <input type="email" id="signup-email" required>
+                            <label for="signup-email">Email address</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="signup-password" required>
+                            <label for="signup-password">password </label>
+                        </div>
+                        <div class="modal-footer">
+                            <p class="error pink-text center-align"></p>
+                            <button class="waves-effect waves-green btn-flat">Singup</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -63,7 +108,9 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
+    const auth = firebase.auth();
 </script>
 <script src="app.js"></script>
+<script src="auth.js"></script>
 </body>
 </html>

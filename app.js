@@ -12,7 +12,7 @@ function renderList(doc){
     let title = document.createElement("span")
     title.textContent = doc.data().title
     let anchor = document.createElement("a")
-    anchor.href = "#modal1"
+    anchor.href = "#modal-edit"
     anchor.className ="modal-trigger secondary-content"
     let editBtn = document.createElement("i")
     editBtn.className = "material-icons"
