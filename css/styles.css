@@ -1,0 +1,7 @@
+li{
+    height:40px;
+    padding: auto;
+}
+#logged-in , #logged-out{
+    border: 0px 5px 0px 5px;
+}

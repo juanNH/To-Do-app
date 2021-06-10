@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
@@ -15,19 +16,18 @@
 <body>
     <nav>
         <div class="nav-wrapper container">
-            <a href="#" class="brand-logo right">TODO</a>
             <ul id="nav-mobile">
                 <li class="logged-in"><a href="#" id="logout">Logout</a></li>
                 <li class="logged-in" id="user-email"></li>
                 <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-login" id="login">Login</a></li>
                 <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-signup" id="logout">Sign up</a></li>
-
+                <a href="#" class="brand-logo right">To do APP</a>
             </ul>
         </div>
     </nav>
         <div class="container">
             <form id="add-todo-form" class="logged-in">
-              <input type="text" name="title" placeholder="Add task" required>
+              <input type="text" name="title" placeholder="Add task" required maxlength="30" >
               <button class="waves-effect waves-light btn">Agregar</button>
             </form>
             <ul id="todo-list" class="collection">
@@ -39,10 +39,11 @@
             <!-- Edit modal-->
             <div id="modal-edit" class="modal">
                 <div class="modal-content">
-                    <input type="text" name="newtitle" placeholder='Update Task'>
+                    <input type="text" name="newtitle" placeholder='Update Task' maxlength="30">
                 </div>
                 <div class="modal-footer">
                     <a href="#!" id="update" class="modal-close waves-effect waves-green btn-flat">Update</a>
+                    <a class="waves-effect waves-green btn-flat modal-close" >Close</a>
                 </div>
             </div>
             <!-- Login modal-->
@@ -61,6 +62,7 @@
                         <div class="modal-footer">
                             <p class="error pink-text center-align"></p>
                             <button class="waves-effect waves-green btn-flat">Login</button>
+                            <a class="waves-effect waves-green btn-flat modal-close" >Close</a>
                         </div>
                     </form>
                 </div>
@@ -81,7 +83,7 @@
                         <div class="modal-footer">
                             <p class="error pink-text center-align"></p>
                             <button class="waves-effect waves-green btn-flat">Singup</button>
-                        </div>
+                            <a class="waves-effect waves-green btn-flat modal-close" >Close</a>                        </div>
                     </form>
                 </div>
             </div>
@@ -111,7 +113,7 @@
     const db = firebase.firestore();
     const auth = firebase.auth();
 </script>
-<script src="app.js"></script>
-<script src="auth.js"></script>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>
