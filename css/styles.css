@@ -5,3 +5,15 @@ li{
 #logged-in , #logged-out{
     border: 0px 5px 0px 5px;
 }
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main{
+    flex: 1 0 auto;
+}
+nav, #footer{
+    background-color: rgb(43, 196, 43) !important;
+}

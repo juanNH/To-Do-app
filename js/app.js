@@ -75,7 +75,7 @@ function getTodos(){
     todoList.innerHTML = '';
     currentUser = auth.currentUser;
 
-    document.querySelector('#user-email').innerHTML = (currentUser != null ? currentUser.email : '');
+    document.querySelector('#user-email').innerHTML = (currentUser != null ? 'Welcome:  '+currentUser.email : '');
 
     if (currentUser === null){
        

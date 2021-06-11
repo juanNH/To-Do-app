@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
@@ -21,17 +21,18 @@
                 <li class="logged-in" id="user-email"></li>
                 <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-login" id="login">Login</a></li>
                 <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-signup" id="logout">Sign up</a></li>
-                <a href="#" class="brand-logo right">To do APP</a>
+
             </ul>
         </div>
     </nav>
         <div class="container">
             <form id="add-todo-form" class="logged-in">
-              <input type="text" name="title" placeholder="Add task" required maxlength="30" >
-              <button class="waves-effect waves-light btn">Agregar</button>
+                <h2 class="center-align">To Do App</h2>
+                <input type="text" name="title" placeholder="Add task" required maxlength="30"  autocomplete="off">
+                <button class="waves-effect waves-light btn">Agregar</button>
+                <h3>Notes:</h3>
             </form>
             <ul id="todo-list" class="collection">
-
                      <!--   <li class="collection-item"><div><span>buying food</span><i class="material-icons secondary-content">delete</i><a href="#modal1" class="modal-trigger secondary-content"><i class="material-icons secondary-content">edit</i></a></div></li> -->
                        
             </ul>
@@ -39,7 +40,7 @@
             <!-- Edit modal-->
             <div id="modal-edit" class="modal">
                 <div class="modal-content">
-                    <input type="text" name="newtitle" placeholder='Update Task' maxlength="30">
+                    <input type="text" name="newtitle" placeholder='Update Task' maxlength="30" autocomplete="off">
                 </div>
                 <div class="modal-footer">
                     <a href="#!" id="update" class="modal-close waves-effect waves-green btn-flat">Update</a>
@@ -52,7 +53,7 @@
                     <h4>Login</h4>
                     <form action="" id="login-form">
                         <div class="input-field">
-                            <input type="email" id="login-email" required>
+                            <input type="email" id="login-email" required >
                             <label for="login-email">Email address</label>
                         </div>
                         <div class="input-field">
@@ -73,7 +74,7 @@
                     <h4>Signup</h4>
                     <form action="" id="signup-form">
                         <div class="input-field">
-                            <input type="email" id="signup-email" required>
+                            <input type="email" id="signup-email" required autocomplete="off">
                             <label for="signup-email">Email address</label>
                         </div>
                         <div class="input-field">
@@ -88,6 +89,31 @@
                 </div>
             </div>
         </div>
+        <!-- footer-->
+        <footer class="page-footer" id="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">To do app by Juan Herrera</h5>
+                  <p class="grey-text text-lighten-4">To do app created using Html, Css, Materialize, Javascript and Firebase</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Social media</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/JuannHerrerad-100313778901414" target="_blank">Facebook</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://twitter.com/JuanNHerreraD" target="_blank">Twitter</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/juannherrerad/" target="_blank">Linkedin</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!" target="_blank">Page</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2021 Copyright
+              </div>
+            </div>
+          </footer>
     <script> 
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.modal');
