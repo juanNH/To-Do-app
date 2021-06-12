@@ -9,11 +9,31 @@ body{
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url(../background.jpg) !important;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
+
 
 main{
     flex: 1 0 auto;
 }
 nav, #footer{
     background-color: rgb(43, 196, 43) !important;
+}
+#bg{
+    background-color: white;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(43, 196, 43);
+    margin: 10px 0px 10px 0px;
+    padding: 5px;
+}
+#bg input{
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(43, 196, 43);
 }
