@@ -79,7 +79,13 @@ function getTodos(){
 
     if (currentUser === null){
        
-        todoList.innerHTML = '<h3 class="center-align">Pleas login to get todos </h3>';
+        todoList.innerHTML = 
+        `
+        <h3 class="center-align">Login or register to access</h3>
+        <br>
+        <p class='center-align'>Register with the email you want :) </p>
+        <p class='center-align'>Project repository:<a href='https://github.com/juanNH/Todo' target='_blank'> Click Here</a></p>
+        `;
         return;
     
     }
