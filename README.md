@@ -1,4 +1,4 @@
-# Todo
+# To Do App
 To Do App creado con html5, Css3, Javascript y FireBase. Validacion basica por Firebase.
 
 
