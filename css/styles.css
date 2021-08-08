@@ -9,7 +9,7 @@ body{
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: url(../background.jpg) !important;
+    background-image: url(../img/background.jpg) !important;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
