@@ -1,4 +1,4 @@
-const CACHE_NAME = "v1_cache_degradados_app_vue"
+const CACHE_NAME = "v1_cache_to_do_app_pwa"
 const urlsToCache = [
     "./",
     "./?umt_source=web_app_manifest",

@@ -1,13 +1,10 @@
-li{
-    height:40px;
-    padding: auto;
-}
-#logged-in , #logged-out{
-    border: 0px 5px 0px 5px;
-}
+html,
 body{
+    background-color: #f3f3f3;
+    text-align: center;
     display: flex;
     min-height: 100vh;
+    width: 100%;
     flex-direction: column;
     background-image: url(../img/background.jpg) !important;
     background-size: cover;
@@ -15,6 +12,13 @@ body{
     background-attachment: fixed;
 }
 
+li{
+    height:40px;
+    padding: auto;
+}
+#logged-in , #logged-out{
+    border: 0px 5px 0px 5px;
+}
 
 main{
     flex: 1 0 auto;
