@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="To do app PWA"> 
+
+    <!-- Metadata para PWA -->
+    <!-- Modificar color barra de estado ANDROID -->
+    <meta name="theme-color" content="#f3f3f3">
+    <!-- Optimizacion de SEO -->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <!-- Modificar barra de estado IOS-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-app-status-bar-style" content="black-translucent">
+    
     <title>To Do App by Juan Herrera</title>
-    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Iconos -->
+    <link rel="shortcut icon" href="img/icon16.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/icon16.png">
+    <link rel="apple-touch-startapp-image" href="img/icon16.png">
+
+    <!-- Manifest-->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
@@ -56,16 +80,16 @@
                     <form action="" id="login-form">
                         <div class="input-field">
                             <input type="email" id="login-email" required >
-                            <label for="login-email">Email address</label>
+                            <label for="login-email">Email </label>
                         </div>
                         <div class="input-field">
                             <input type="password" id="login-password" required>
-                            <label for="login-password">password </label>
+                            <label for="login-password">Contraseña </label>
                         </div>
                         <div class="modal-footer">
                             <p class="error pink-text center-align"></p>
                             <button class="waves-effect waves-green btn-flat">Login</button>
-                            <a class="waves-effect waves-green btn-flat modal-close" >Close</a>
+                            <a class="waves-effect waves-green btn-flat modal-close" >Cerrar</a>
                         </div>
                     </form>
                 </div>
@@ -73,20 +97,20 @@
             <!-- Signup modal-->
             <div id="modal-signup" class="modal">
                 <div class="modal-content">
-                    <h4>Signup</h4>
+                    <h4>Sign up</h4>
                     <form action="" id="signup-form">
                         <div class="input-field">
                             <input type="email" id="signup-email" required autocomplete="off">
-                            <label for="signup-email">Email address</label>
+                            <label for="signup-email">Email </label>
                         </div>
                         <div class="input-field">
                             <input type="password" id="signup-password" required>
-                            <label for="signup-password">password </label>
+                            <label for="signup-password">Contraseña </label>
                         </div>
                         <div class="modal-footer">
                             <p class="error pink-text center-align"></p>
-                            <button class="waves-effect waves-green btn-flat">Singup</button>
-                            <a class="waves-effect waves-green btn-flat modal-close" >Close</a>                        </div>
+                            <button class="waves-effect waves-green btn-flat">Sing up</button>
+                            <a class="waves-effect waves-green btn-flat modal-close" >Cerrar</a></div>
                     </form>
                 </div>
             </div>
@@ -97,7 +121,7 @@
               <div class="row">
                 <div class="col l6 s12">
                   <h5 class="white-text">To do app by Juan Herrera</h5>
-                  <p class="grey-text text-lighten-4">To do app created using Html, Css, Materialize, Javascript and Firebase</p>
+                  <p class="grey-text text-lighten-4">To do app creada usando Html, Css, Materialize, Javascript y Firebase</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                   <h5 class="white-text">Social media</h5>
@@ -123,25 +147,8 @@
     });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-    
-
-    <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyAvLXJlyLLCNokvPuOBl_C_yZgcERuv7cg",
-        authDomain: "todolist-683fc.firebaseapp.com",
-        projectId: "todolist-683fc",
-        storageBucket: "todolist-683fc.appspot.com",
-        messagingSenderId: "714910061471",
-        appId: "1:714910061471:web:c8a9ffb601eabc084163aa"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    const auth = firebase.auth();
-</script>
-<script src="js/app.js"></script>
-<script src="js/auth.js"></script>
+    <script src="./js/firebaseconf.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/auth.js"></script>
 </body>
 </html>
